@@ -1,0 +1,122 @@
+\documentclass[article,twoside]{combine}
+
+\input{preamble}
+
+\begin{document}
+
+\pagestyle{combine} % use the combine page style
+
+\thispagestyle{empty}
+\input{title}
+
+\clearpage
+
+% copyright page
+\null
+\vfill
+
+{\parindent0pt
+\textit{The Journal of Computing Sciences in Colleges}
+(ISSN 1937-4771 print, 1937-4763 digital) is published at least six times per
+year and constitutes the refereed papers of regional conferences sponsored by
+the Consortium for Computing Sciences in Colleges.
+
+\vspace{10pt}
+
+\input{copyright}
+}
+
+\clearpage
+
+\tableofcontents % main ToC
+
+\begin{papers}
+
+\coltoctitle{The Consortium for Computing Sciences in Colleges Board of Directors}
+\import{board_directors}
+
+\coltoctitle{CCSC National Partners}
+\import{national_partners}
+
+\coltoctitle{Welcome to the \confYear\ CCSC \confName\ Conference}
+\import{welcome}
+
+\coltoctitle{Regional Committees --- \confYear\ CCSC \confName\ Region}
+\import{regional_committees}
+
+\coltoctitle{Reviewers --- \confYear\ CCSC \confName\ Conference}
+\import{reviewers}
+
+%%\coltoctitle{{NSF} Grant Workshop}
+%%\coltocauthor{Mark A. Pauley, {NSF}}
+%%\import{workshop_template}
+
+
+%keynotes
+\coltoctitle{Keynote Speaker}
+\coltocauthor{Paul R. Gault}
+\import{keynote}
+
+%papers
+\coltoctitle{Supporting Low-Income, Talented Undergraduate Students in Engineering and Computing Sciences with Scholarships and Mentoring}
+\coltocauthor{Dulal C. Kar, Scott A. King, and Dugan Um, Texas A\&M University-Corpus Christi}
+\import{155}
+
+\coltoctitle{Iterative Efforts for Improving Learning Experience in Software Engineering}
+\coltocauthor{Pradip Peter Dey, Mohammad Amin, Bhaskar Raj Sinha, National University}
+\import{191}
+
+\coltoctitle{Bug Battles: A Competition to Catch Bugs in Different\\
+Programming Languages}
+\coltocauthor{Waleed Alhumud, Abdullah Alenzi, Ren\'ee Bryce, Yuan Li, University of North Texas; Nasser Alshammari, Jouf University}
+\import{241}
+
+\coltoctitle{Preparing ABET Accreditation for An Undergraduate Software Engineering Program}
+\coltocauthor{Jicheng Fu, Myungah Park, Gang Qian, Hong Sung, Thomas Turner, University of Central Oklahoma}
+\import{449}
+
+\coltoctitle{Comparative Sequential and Parallel Discrete Signal Convolution Algorithms: A Case Study}
+\coltocauthor{Caleb Sneath, Eduardo Colmenares, Midwestern State University}
+\import{1048}
+
+
+\coltoctitle{Developing Incident Response-Focused Cybersecurity\\
+Undergraduate Curricula}
+\coltocauthor{Junghwan ``John'' Rhee, Myungah Park, Fei Zuo, Shuai Zhang, Gang Qian, Goutam Mylavarapu, Hong Sung, Thomas Turner, University of Central Oklahoma}
+\import{2648}
+
+\coltoctitle{Hands-On Lab Development for Policy Violations in\\
+Voice Personal Assistants}
+\coltocauthor{Alejandra Enriquez Sanchez, Oludare Ogunbowale,
+Olayinka Adetola, Na Li, Prairie View A\&M University}
+\import{9014}
+
+%workshop/tutorials: tutorial
+\coltoctitle{Programming Many-Core Architectures (GPUs) Using CUDA\\--- Conference Tutorial}
+\coltocauthor{Eduardo Colmenares, Midwestern State University}
+\import{1workshop}
+
+%% 4/6/2023: retracted due to no conference attendance. 
+%\coltoctitle{An Instructor-Led Coding Project to Learn Design and\\
+%Programming of Hash Functions\\--- Conference Tutorial}
+%\coltocauthor{Penn P. Wu, DeVry University}
+%\import{2workshop}
+
+\coltoctitle{Designing Learning Outcomes and
+Competencies using Bloom's for Computing\\--- Conference Tutorial}
+\coltocauthor{Markus Geissler, Koudjo Koumadi, Pam Schmelz, 
+Christian Servin, Cara Tang, Cindy Tucker, Committee for Computing Education in
+Community Colleges}
+\import{3workshop}
+
+
+%nifty assignments
+
+
+%panel
+
+
+
+\end{papers}
+
+\end{document}

@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage[
+  paperheight=226mm,
+  paperwidth=335mm,
+  inner=180mm,
+  outer=30mm,
+  top=30mm,
+  bottom=20mm]{geometry}
+\usepackage[utf8]{inputenc}
+
+\usepackage{background}
+\usepackage{xcolor}
+
+\backgroundsetup{scale = 1.1, angle = 0, opacity = 1,
+   contents = {\includegraphics[width = \paperwidth,
+   height = \paperheight, keepaspectratio]
+   {cover_background.pdf}}}
+   % Adjust filename and path to match your own image
+
+\input{variables}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{textsf}
+
+\begin{center}
+\textbf{\Huge{
+\colorbox{black}{\textcolor{white}{The Journal of Computing}}\\
+\smallskip
+\colorbox{black}{\textcolor{white}{Sciences in Colleges}}\\
+}}\\
+\end{center}
+
+\vfill
+
+\begin{center}
+\textbf{\Large{
+\colorbox{white}{Papers of the \confOrdinal\ Annual CCSC}\\
+\colorbox{white}{\confName\ Conference}\\
+}}\\
+\end{center}
+
+\vspace{10pt}
+
+\begingroup
+\centering
+\colorbox{white}{\large{\confDates, \confYear}}\\
+\colorbox{white}{\large{\confSchool}}\\
+\colorbox{white}{\large{\confCity}}\\
+\endgroup
+
+\vspace{70pt}
+
+{\parindent0pt
+\textbf{\Large Volume \journalVolume, Number \journalNumber} \hfill
+\textbf{\Large \journalMonth\ \journalYear}
+}
+\end{textsf}
+
+\end{document}

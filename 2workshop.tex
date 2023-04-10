@@ -1,0 +1,72 @@
+\documentclass{article}
+
+%\input{preamble}
+
+\title{An Instructor-Led Coding Project to Learn Design and Programming of Hash Functions\footnote{\protect\input{copyleft}}
+\\
+\vspace{0.2in}
+\large{
+Conference Tutorial
+}}
+
+
+\author{
+Penn P. Wu\\
+DeVry University\\
+Ontario, CA 91764\\
+\email{pwu@devry.edu}\\
+}
+
+
+\begin{document}
+
+\maketitle
+
+With the rising cryptocurrencies, the design, development, and programming of hush functions is quickly becoming a demanded skill. Blockchain, for example, adopts SHA256 to produce a 256-bit (or 64-character) long string as output known as a hash value (hash code, digest, or simply hash). Example of cryptographic hash function is SHA3-256. The following illustrates how it converts a simple string ``hello'' to a hash value. 
+
+\small
+\begin{verbatim}
+SHA3-256("hello") = 
+"3338be694f50c5f338814986cdf0686453a888b84f424d792af4b9202398f392"
+\end{verbatim}
+\normalsize
+
+In a college-level course of data structure, instructors typically discuss the concept of famous hash function algorithms and how to apply structure analysis to evaluate their effectiveness. This approach investigates how a mathematical function can operate on a given string to create a hash value as output. Some instructors further prove how these algorithms are mathematically practical. 
+
+These algorithms are typically complicated and difficult to understand, not to mention writing codes to implement them. As a result, students often acquire a good understanding of how these hash functions are used in cryptography, how they preserve data integrity in combination with digital signatures, and how they apply to cryptocurrency, password security, and message security. The problem is that many students need a working example of codes to visualize how to develop a simple hash function from scratch, in addition to classroom-based theoretical discussions. They need a set of workable codes that implement a simple algorithm to build a hash function which is a one-way function whose value is irreversible.
+
+An instructor-led coding project to explore how to design and program hash functions is probably a pedagogical approach to shorten the gap between ``knowing'' the concept and ``creating'' a hash function. The objective is to guide students through a project to design an algorithm that will generate a unique fixed-length (64-character) hash value. The algorithm will always generate the same hash value if given the same input. The coding project implements the following algorithm:
+
+\begin{itemize}
+    \item Replace all blank spaces (` ') in the string with `\textdollar{}' 
+    \item Duplicate the string literal if the length of string literal is less than 64. Repeatedly duplicate the string till its length exceeds 64.
+    \item From the first to the last character in the string, make every two characters as pair. Reverse the order of the first and second character in every pair.
+    \item Reverse the order of character in the entire string. But, keep only last 64 characters. Ignore all other characters. As a result, the string becomes a 64-character string literal.
+    \item Break the 64-character string to 8 segments with each segment having 8 characters.
+    \item From the first to the last segments, make every two segments a pair. Reverse the order of the first and second segments in every pair.
+    \item Recombine all segments to form a new string.
+    \item Convert every character to its ASCII code (n). Then let n go through XOR with an integer 81567 (or any integer).
+    \item The result of XOR operation needed to be checked. Check every n to ensure it is an integer in one of the three ranges: (48-57, 65-90, and 97-122), using a proposed \textquotedblleft{}substitution\textquotedblright{} rule.
+    \item Recombine all characters to form a new string literal, which is the hash value.
+\end{itemize}
+
+Below is the proposed ``substitution'' rule.
+
+\begin{itemize}
+    \item If n\textless{}48, let n be n\%10+48. 
+    \item If 57\textless{}65, let n be n\%26+65. 
+    \item If 90\textless{}97, let n be n\%26+97.
+    \item If n\textgreater{}122, let n go through a modulus operation (\%) with 3. 
+\begin{itemize}
+    \item When n\%3 returns 0, let n be n\%10+48. 
+    \item When n\%3 returns 1, let n be n\%26+65. 
+    \item When n\%3 returns 2, let n be n\%26+97. 
+\end{itemize}
+
+    \item Convert n back to a character.
+\end{itemize}
+
+The above-proposed algorithm is independent of programming languages. Sample codes written in C++, Java, and Python are available for students to use as references. In a three-hour lecture, the instructor will guide students through a coding project to create a hash function based on the above algorithm. Students will write the codes, compile the codes to self-executable programs, and then test the programs to produce a ``fixed-length'' and ``irreversible'' hash for a given arbitrary input. The hash function will always produce the same hash if the given input is the same.
+
+The author will share the instructional materials, sample codes, and experiences of how to guide students through a three-hour lecture with hands-on learning activities to: (1) apply basic programming skills, (2) use simple arithmetic operations, and (3) exercise critical thinking ability to create an immediately usable hash function.
+\end{document}
